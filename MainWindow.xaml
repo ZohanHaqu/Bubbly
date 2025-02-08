@@ -1,0 +1,20 @@
+﻿<Window x:Class="Bubbly.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bubbly" Height="450" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="OpenFile_Click"/>
+            </MenuItem>
+        </Menu>
+        <MediaElement Name="mediaElement" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MediaOpened="MediaElement_MediaOpened" MediaEnded="MediaElement_MediaEnded"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Button Name="playButton" Content="Play" Click="Play_Click"/>
+            <Button Content="Pause" Click="Pause_Click"/>
+            <Button Name="rewatchButton" Content="Rewatch" Click="Rewatch_Click" IsEnabled="False"/>
+            <Slider Name="seekSlider" ValueChanged="SeekSlider_ValueChanged" PreviewMouseDown="SeekSlider_PreviewMouseDown" PreviewMouseUp="SeekSlider_PreviewMouseUp" Width="687"/>
+            <TextBlock Name="currentTimeTextBlock" Width="50" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
